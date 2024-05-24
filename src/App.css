@@ -1,0 +1,39 @@
+/* Add styles for the mode toggle button */
+.mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  z-index: 9999;
+}
+
+.mode-toggle:hover {
+  background-color: #0056b3;
+}
+
+/* Add styles for dark mode */
+.dark-mode {
+  background-color: #020220;
+  color: #fff;
+}
+
+.dark-mode input,
+.dark-mode select {
+  background-color: #444;
+  color: #fff;
+  border-color: #666;
+}
+
+.dark-mode .success-container {
+  background-color: #050439;
+  color: #fff;
+}
+
+.dark-mode h1{
+  color: #fff !important;
+}
