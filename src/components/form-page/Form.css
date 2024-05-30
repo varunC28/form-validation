@@ -1,121 +1,121 @@
 /* Center the form on the page */
 form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  margin-top: 50px !important;
-  padding: 20px;
-  max-width: 500px;
-}
-
-/* Style for each input field */
-form div {
-  margin-bottom: 15px;
-  width: 100%;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"],
-select {
-  width: calc(100% - 40px); /* Adjusting width to accommodate the button */
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-form input {
-  width: 100% !important;
-}
-
-/* Show/hide button styles */
-.password-container {
-  position: relative;
-}
-
-.password-toggle {
-  position: absolute;
-  top: 13%;
-  right: 0px;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-/* Button styles */
-button[type="submit"],
-button[type="button"] {
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: #007bff;
-  color: white;
-  margin-top: 10px;
-}
-
-button[type="button"] {
-  background-color: #606467;
-}
-
-button[type="submit"] {
-  width: 100% !important;
-}
-
-button[type="button"]:hover {
-  background-color: #606467;
-}
-
-button[type="submit"]:hover {
-  background-color: #0056b3;
-}
-
-/* Error message styles */
-span {
-  color: red;
-  font-size: 12px;
-  margin-top: 5px;
-}
-
-/* Styles for phone container */
-.phone-container {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.phone-field {
-  flex: 1;
-}
-
-.phone-field:not(:last-child) {
-  margin-right: 10px;
-}
-
-/* Adding box-sizing to ensure padding and borders are included in the element's width and height */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-select {
-  height: 40px;
-}
-
-input[name="countryCode"] {
-  width: 60px !important;
-}
-
-input[name="phoneNo"] {
-  width: 390px !important;
-}
-
-select {
-  width: 100%;
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 50px !important;
+    padding: 20px;
+    max-width: 500px;
+  }
+  
+  /* Style for each input field */
+  form div {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  select {
+    width: calc(100% - 40px); /* Adjusting width to accommodate the button */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  form input {
+    width: 100% !important;
+  }
+  
+  /* Show/hide button styles */
+  .password-container {
+    position: relative;
+  }
+  
+  .password-toggle {
+    position: absolute;
+    top: 13%;
+    right: 0px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Button styles */
+  button[type="submit"],
+  button[type="button"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    margin-top: 10px;
+  }
+  
+  button[type="button"] {
+    background-color: #606467;
+  }
+  
+  button[type="submit"] {
+    width: 100% !important;
+  }
+  
+  button[type="button"]:hover {
+    background-color: #606467;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Error message styles */
+  span {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  /* Styles for phone container */
+  .phone-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .phone-field {
+    flex: 1;
+  }
+  
+  .phone-field:not(:last-child) {
+    margin-right: 10px;
+  }
+  
+  /* Adding box-sizing to ensure padding and borders are included in the element's width and height */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  select {
+    height: 40px;
+  }
+  
+  input[name="countryCode"] {
+    width: 60px !important;
+  }
+  
+  input[name="phoneNo"] {
+    width: 390px !important;
+  }
+  
+  select {
+    width: 100%;
+  }

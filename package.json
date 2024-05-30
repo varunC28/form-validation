@@ -1,5 +1,5 @@
 {
-  "name": "ct1",
+  "name": "validate-form",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

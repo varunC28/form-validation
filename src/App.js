@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import './App.css';
 import Form from './components/form-page/Form';
 import Success from './components/success-page/Success';
-import './App.css';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -16,7 +16,7 @@ function App() {
     <Router>
       <div className="app-container">
         <button className="mode-toggle" onClick={toggleDarkMode}>
-          {darkMode ? 'Dark Mode' : 'Light Mode'}
+          {darkMode ? 'Light Mode' : 'Dark Mode'}
         </button>
         <Routes>
           <Route path="/" element={<Form />} />
