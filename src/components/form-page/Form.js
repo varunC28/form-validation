@@ -1,3 +1,27 @@
+<<<<<<< HEAD
+// Libraries
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
+// css
+import './Form.css' // Import the CSS file
+
+// utilities
+import { validateForm } from '../../utilities/FormValidator'
+
+// services
+import { useCountries } from '../../service/CountryService'
+
+const Form = () => {
+  /** Hook that helps us interact with the backend for country info */
+  const [countries, isCountriesLoading, isCountriesLoadingError] = useCountries()
+
+  /** Error state for the form */
+  const [errors, setErrors] = useState({})
+
+  /** Cities based on the current country  */
+  const [cities, setCities] = useState([])
+=======
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Form.css'; // Import the CSS file
@@ -22,10 +46,20 @@ const Form = () => {
         console.error("Error fetching countries:", error);
       }
     };
+>>>>>>> 7ce4dd9d652b09df48ab5bbb3e59ece1e1f0733d
 
-    fetchCountries();
-  }, []);
+  /** State for showing/hiding password for the user */
+  const [passwordVisible, setIsPasswordVisible] = useState(false)
 
+<<<<<<< HEAD
+  const navigate = useNavigate()
+
+  const handleCountryChange = (e) => {
+    const countryName = e.target.value
+    const country = countries.find((arr) => arr.country == countryName)
+    setCities(country?.cities || [])
+  }
+=======
    // Handle input change
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -44,9 +78,126 @@ const Form = () => {
       }
     }
   };
+>>>>>>> 7ce4dd9d652b09df48ab5bbb3e59ece1e1f0733d
 
    // Toggle password visibility
   const togglePasswordVisibility = () => {
+<<<<<<< HEAD
+    setIsPasswordVisible((prev) => !prev)
+  }
+
+  // Handle form submission
+  const handleSubmit = (e) => {
+    const { target } = e
+    const formData = new FormData(target)
+    const form = Object.fromEntries(formData.entries())
+
+    e.preventDefault()
+    if (validateForm(form, setErrors)) {
+      navigate('/success', { state: { formData: form } })
+    }
+  }
+
+  const renderNameInfo = () => {
+    return (
+      <>
+        <div>
+          <input type='text' name='firstName' placeholder='First Name *' required />
+          {errors.firstName && <span>{errors.firstName}</span>}
+        </div>
+        <div>
+          <input type='text' name='lastName' placeholder='Last Name *' />
+          {errors.lastName && <span>{errors.lastName}</span>}
+        </div>
+        <div>
+          <input type='text' name='username' placeholder='Username *' />
+          {errors.username && <span>{errors.username}</span>}
+        </div>
+      </>
+    )
+  }
+
+  const renderEmailInfo = () => {
+    return (
+      <>
+        <div>
+          <input type='email' name='email' placeholder='Email *' />
+          {errors.email && <span>{errors.email}</span>}
+        </div>
+        <div className='password-container'>
+          <input type={passwordVisible ? 'text' : 'password'} name='password' placeholder='Password *' />
+          <button type='button' className='password-toggle' onClick={togglePasswordVisibility}>
+            {passwordVisible ? 'Hide' : 'Show'}
+          </button>
+          {errors.password && <span>{errors.password}</span>}
+        </div>
+      </>
+    )
+  }
+
+  const renderCountryInfo = () => {
+    return (
+      <>
+        <div>
+          <select name='country' disabled={isCountriesLoading} onChange={handleCountryChange}>
+            <option value=''>Select Country *</option>
+            {countries.map((country) => (
+              <option key={country.country} value={country.country}>
+                {country.country}
+              </option>
+            ))}
+          </select>
+          {isCountriesLoadingError && <span>Error loading countries</span>}
+          {errors.country && <span>{errors.country}</span>}
+        </div>
+        <div>
+          <select name='city'>
+            <option value=''>Select City *</option>
+            {cities.map((city, index) => (
+              <option key={index} value={city}>
+                {city}
+              </option>
+            ))}
+          </select>
+          {errors.city && <span>{errors.city}</span>}
+        </div>
+      </>
+    )
+  }
+
+  function renderPersonalInfo() {
+    return (
+      <>
+        <div className='phone-container'>
+          <div className='phone-field'>
+            <input type='text' name='countryCode' placeholder='+91' />
+            {errors.countryCode && <span>{errors.countryCode}</span>}
+          </div>
+          <div className='phone-field'>
+            <input type='number' name='phoneNo' placeholder='Phone No *' />
+            {errors.phoneNo && <span>{errors.phoneNo}</span>}
+          </div>
+        </div>
+        <div>
+          <input type='text' name='panNo' placeholder='PAN No *' />
+          {errors.panNo && <span>{errors.panNo}</span>}
+        </div>
+        <div>
+          <input type='text' name='aadharNo' placeholder='Aadhar No *' />
+          {errors.aadharNo && <span>{errors.aadharNo}</span>}
+        </div>
+      </>
+    )
+  }
+  // Render the form
+  return (
+    <form onSubmit={handleSubmit}>
+      {renderNameInfo()}
+      {renderEmailInfo()}
+      {renderCountryInfo()}
+      {renderPersonalInfo()}
+      <button type='submit'>Submit</button>
+=======
     setShowPassword(!showPassword);
   };
 
@@ -137,8 +288,9 @@ const Form = () => {
       {renderAccountInfo()}
       {renderContactInfo()}
       <button type="submit">Submit</button>
+>>>>>>> 7ce4dd9d652b09df48ab5bbb3e59ece1e1f0733d
     </form>
-  );
-};
+  )
+}
 
-export default Form;
+export default Form
